@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Neo Sky & Sun — design tokens (Tailwind v4)
+   See docs/DESIGN_SYSTEM.md for usage.
+   ───────────────────────────────────────────── */
+@theme {
+  /* Sky — cool side */
+  --color-sky-50:  #f0f9ff;
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-300: #7dd3fc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-900: #0c2a4a;
+
+  /* Sun — warm accent */
+  --color-sun-50:  #fff8eb;
+  --color-sun-100: #ffeac4;
+  --color-sun-200: #ffd58a;
+  --color-sun-300: #ffbe57;
+  --color-sun-400: #ffa726;
+  --color-sun-500: #f97316;
+  --color-sun-600: #ea580c;
+  --color-sun-700: #c2410c;
+
+  /* Ink */
+  --color-ink-900: #0b1220;
+  --color-ink-700: #1e293b;
+  --color-ink-500: #475569;
+  --color-ink-300: #94a3b8;
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+
+  /* Shadows — soft, layered, never harsh */
+  --shadow-glow-sun: 0 30px 80px -20px rgb(255 167 38 / 0.45);
+  --shadow-glow-sky: 0 30px 80px -20px rgb(14 165 233 / 0.35);
+  --shadow-card:
+    0 1px 0 rgb(255 255 255 / 0.6) inset,
+    0 20px 40px -20px rgb(15 23 42 / 0.18);
+
+  /* Type */
+  --font-display: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, monospace;
+}
+
+/* Smooth, calm defaults */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink-900);
+  background: #ffffff;
+}
+
+/* ──────────────────────────────────────────
+   Atmospheric noise overlay (prevents banding
+   on large gradients). Apply via .noise.
+   ────────────────────────────────────────── */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+}
+
+/* ──────────────────────────────────────────
+   Scroll-reveal — gated by IntersectionObserver
+   in src/lib/use-reveal.ts. Calm engineered easing.
+   ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slow ambient drift for hero sun-glare. */
+@keyframes sun-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(2%, -1%, 0) scale(1.04); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+.sun-drift {
+  animation: sun-drift 32s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
