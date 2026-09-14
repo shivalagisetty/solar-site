@@ -15,7 +15,7 @@ export function Nav() {
           >
             <Sun size={16} strokeWidth={2.25} />
           </span>
-          Helio
+          Kairos
         </a>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-ink-700">

@@ -28,7 +28,7 @@ const FAQS = [
   },
   {
     q: "Can I add a battery later?",
-    a: "Every Helio inverter is battery-ready (Sungrow, Goodwe, or Enphase). Adding a Luminous, Exide NXT, or Tesla Powerwall in year three takes one day on-site. Battery is especially worth it on Karnataka and Maharashtra ToD tariffs where evening rates are 30–50% higher than daytime.",
+    a: "Every Kairos inverter is battery-ready (Sungrow, Goodwe, or Enphase). Adding a Luminous, Exide NXT, or Tesla Powerwall in year three takes one day on-site. Battery is especially worth it on Karnataka and Maharashtra ToD tariffs where evening rates are 30–50% higher than daytime.",
   },
 ];
 
@@ -49,10 +49,10 @@ export function FAQ() {
           <p className="mt-5 text-ink-700 leading-relaxed">
             Don't see yours? Email{" "}
             <a
-              href="mailto:hello@helio.in"
+              href="mailto:hello@Kairos.in"
               className="text-sky-700 underline underline-offset-4 hover:text-sky-900"
             >
-              hello@helio.in
+              hello@Kairos.in
             </a>{" "}
             — a real engineer answers, usually inside 24 hours.
           </p>

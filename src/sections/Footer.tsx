@@ -33,7 +33,7 @@ export function Footer() {
             >
               <Sun size={18} strokeWidth={2.25} />
             </span>
-            Helio
+            Kairos
           </a>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-sky-200/80">
             Premium solar design, install, and 25-year monitoring for homes,
@@ -78,7 +78,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-sky-200/60">
-          <p>© {new Date().getFullYear()} Helio Energy, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Kairos Energy, Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-white transition">Privacy</a>
             <a href="#" className="hover:text-white transition">Terms</a>

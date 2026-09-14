@@ -9,14 +9,14 @@ const QUOTES = [
     name: "Anjali Krishnan",
     role: "Homeowner · Bengaluru",
     quote:
-      "Three other installers handed me a one-page brochure. Helio handed me a 28-page engineering packet, a shading study, and a payback chart with my actual BESCOM ToD slabs. Easy decision.",
+      "Three other installers handed me a one-page brochure. Kairos handed me a 28-page engineering packet, a shading study, and a payback chart with my actual BESCOM ToD slabs. Easy decision.",
     metric: "5 kW · Luminous 5 kVA",
   },
   {
     name: "Rohan Mehta",
     role: "Director · Mehta Textiles",
     quote:
-      "Our MD charges from MSEDCL were eating ₹11 lakh a month. Helio sized a 480 kW rooftop + 600 kWh BESS and we hit positive cash flow in the first billing cycle.",
+      "Our MD charges from MSEDCL were eating ₹11 lakh a month. Kairos sized a 480 kW rooftop + 600 kWh BESS and we hit positive cash flow in the first billing cycle.",
     metric: "480 kW OPEX · 4.2 yr payback",
   },
   {

@@ -26,9 +26,8 @@ const TARIFF_INFLATION = 0.04;
 const OFFSET = 0.92;
 
 function pmSuryaGharSubsidy(kW: number): number {
-  if (kW <= 1) return Math.round(30_000 * kW);
-  if (kW <= 2) return Math.round(30_000 + 30_000 * (kW - 1));
-  if (kW <= 3) return Math.round(60_000 + 18_000 * (kW - 2));
+  if (kW <= 1) return Math.round(30_000 );
+  if (kW <= 2) return Math.round(30_000 + 30_000);
   return 78_000;
 }
 
@@ -60,7 +59,6 @@ function inr(n: number, opts: { compact?: boolean } = {}): string {
 }
 
 export function Calculator() {
-  const [pin, setPin] = useState("560001");
   const [bill, setBill] = useState(3500);
 
   const result = useMemo(() => modelSavings(bill), [bill]);
@@ -112,21 +110,6 @@ export function Calculator() {
           <Reveal delay={120} className="mt-10">
             <GlassCard>
               <div className="grid gap-5 sm:grid-cols-[1fr_2fr]">
-                <label className="block">
-                  <span className="text-xs uppercase tracking-[0.16em] font-medium text-ink-500">
-                    PIN code
-                  </span>
-                  <input
-                    inputMode="numeric"
-                    pattern="\d{6}"
-                    maxLength={6}
-                    value={pin}
-                    onChange={(e) =>
-                      setPin(e.target.value.replace(/\D/g, "").slice(0, 6))
-                    }
-                    className="mt-2 w-full rounded-xl border border-white/70 bg-white/80 px-4 py-3 font-display text-lg font-medium tracking-tight text-ink-900 outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-300/50 transition"
-                  />
-                </label>
                 <label className="block">
                   <span className="text-xs uppercase tracking-[0.16em] font-medium text-ink-500">
                     Avg. monthly bill — {inr(bill)}
@@ -188,9 +171,6 @@ export function Calculator() {
                 </p>
                 <p className="mt-2 font-display text-4xl md:text-5xl font-semibold tracking-[-0.02em] text-ink-900">
                   {inr(result.lifetime, { compact: true })}
-                </p>
-                <p className="mt-1 text-sm text-ink-500">
-                  Over 25 years · PIN {pin || "—"}
                 </p>
               </div>
               <span className="hidden sm:inline-flex items-center gap-2 rounded-full bg-sun-50 border border-sun-100 px-3 py-1 text-xs font-medium text-sun-700">

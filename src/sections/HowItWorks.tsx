@@ -11,7 +11,7 @@ const STEPS = [
     title: "Site model",
     body:
       "We pull satellite imagery and run a full-year irradiance simulation on your roof using NIWE/MNRE solar resource data. No salesperson on a ladder.",
-    chip: "Aurora · HelioScope",
+    chip: "Aurora · KairosScope",
   },
   {
     n: "02",

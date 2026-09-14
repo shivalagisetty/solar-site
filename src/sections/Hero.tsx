@@ -39,7 +39,7 @@ export function Hero() {
 
           <Reveal delay={160}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-700">
-              Helio designs, installs, and monitors premium rooftop solar
+              Kairos designs, installs, and monitors premium rooftop solar
               across India — for homes, MSMEs, and industrial sites. We handle
               the DISCOM, the subsidy, and 25 years of monitoring after.
             </p>

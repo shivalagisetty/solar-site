@@ -9,7 +9,7 @@ const VALUES = [
     icon: PiggyBank,
     title: "Save",
     body:
-      "Lock in tomorrow's tariff at today's price. The average Helio customer offsets 92% of their DISCOM bill and clears payback inside four years.",
+      "Lock in tomorrow's tariff at today's price. The average Kairos customer offsets 92% of their DISCOM bill and clears payback inside four years.",
     metric: "₹14.6 L",
     metricLabel: "avg 25-yr savings",
   },
@@ -36,7 +36,7 @@ export function ValueProps() {
     <Section className="bg-[linear-gradient(180deg,#f0f9ff_0%,#ffffff_60%,#fff8eb_100%)]">
       <div className="max-w-2xl">
         <Reveal>
-          <Eyebrow>Why Helio</Eyebrow>
+          <Eyebrow>Why Kairos</Eyebrow>
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-ink-900">
             Premium hardware. Honest math. Zero surprises.
           </h2>
